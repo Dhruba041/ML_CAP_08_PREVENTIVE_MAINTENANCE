@@ -144,20 +144,48 @@ if st.button("Classify Macine Failure Possibility"):
         Prediction_text = "Low possibility of machine failure."
 
 
+#    st.markdown(
+#                    f"""
+#                    <div style="
+#                        background-color:#e8f0ff;
+#                        padding:15px;
+#                        border-radius:10px;
+#                        border:2px solid #0B3D91;
+#                        color:#0B3D91;
+#                        font-size:18px;
+#                        font-weight:bold;
+#                        text-align:center;
+#                    ">
+#                        Predicted Machine Failure Possibility: {Prediction_text}
+#                    </div>
+#                    """,
+#                    unsafe_allow_html=True
+#                )
+
+
+    if Prediction_text == "High possibility of machine failure.":
+        bg_color = "#ffebee"      # Light red
+        border_color = "#d32f2f"  # Red
+        text_color = "#b71c1c"    # Dark red
+    else:  # Low possibility of machine failure.
+        bg_color = "#e8f0ff"      # Light blue
+        border_color = "#0B3D91"  # Blue
+        text_color = "#0B3D91"    # Dark blue
+
     st.markdown(
-                    f"""
-                    <div style="
-                        background-color:#e8f0ff;
-                        padding:15px;
-                        border-radius:10px;
-                        border:2px solid #0B3D91;
-                        color:#0B3D91;
-                        font-size:18px;
-                        font-weight:bold;
-                        text-align:center;
-                    ">
-                        Predicted Machine Failure Possibility: {Prediction_text}
-                    </div>
-                    """,
-                    unsafe_allow_html=True
-                )
+        f"""
+        <div style="
+            background-color:{bg_color};
+            padding:15px;
+            border-radius:10px;
+            border:2px solid {border_color};
+            color:{text_color};
+            font-size:18px;
+            font-weight:bold;
+            text-align:center;
+        ">
+            Predicted Machine Failure Possibility: {Prediction_text}
+        </div>
+        """,
+        unsafe_allow_html=True
+    )
